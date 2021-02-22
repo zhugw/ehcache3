@@ -87,7 +87,7 @@ final class FileUtils {
   static void create(File directory) throws CachePersistenceException {
     if (directory.isDirectory()) {
       LOGGER.debug("Reusing {}", directory.getAbsolutePath());
-    } else if (directory.mkdir()) {
+    } else if (directory.mkdirs()) {
       LOGGER.debug("Created {}", directory.getAbsolutePath());
     } else if (directory.isDirectory()) {
       // if create directory fails, check once more if it is due to concurrent creation.
